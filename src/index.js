@@ -8,7 +8,7 @@ const commandList = `Comandos disponibles: !insultar !dados`;
 
 //helpers
 const rollDice = require("./helpers/RollDice");
-const Insultar = require("./helpers/Insultar");
+const insultos = require("./helpers/Insultos");
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -31,7 +31,11 @@ client.on("message", (message) => {
         ? message.mentions.users.first()
         : message.author;
 
-      message.channel.send(`${taggedUser} es un ${Insultar}`);
+      message.channel.send(
+        `${taggedUser} es un ${insultos[
+          Math.floor(Math.random() * insultos.length)
+        ].toLowerCase()}`
+      );
     }
     //COMMAND DADOS
 

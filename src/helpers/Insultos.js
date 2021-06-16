@@ -221,5 +221,4 @@ const insultos = [
   "Zullenco",
   "Zurcefrenillos",
 ];
-module.exports = insulto =
-  insultos[Math.floor(Math.random() * insultos.length)].toLowerCase();
+module.exports = insultos;
